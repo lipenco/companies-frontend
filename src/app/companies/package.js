@@ -1,9 +1,11 @@
+
 define(function(require) {
   'use strict';
 
   var module = require('./module');
-  // require('./controller');
-  // require('./states');
+  require('./controllers/list');
+  require('./resources/rest');
+  require('./states');
 
   return module;
 
