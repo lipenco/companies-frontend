@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-ee-boilerplate",
+  "version": "1.5.1",
+  "private": true,
+  "description": "angularjs enterprise edition boilerplate",
+  "keywords": [
+    "angular.js",
+    "javascript",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-front/angularjs-ee-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/the-front/angularjs-ee-boilerplate/issues"
+  },
+  "author": "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>",
+  "collaborators": [
+    "Janderson Fernandes Cardoso <jandersonfc.com@gmail.com>",
+    "Mario de Souza Junior <mrdesouzajunior@gmail.com>",
+    "Vinicius Camara de Oliveira <viniciuscamara@gmail.com>"
+  ]
+}
