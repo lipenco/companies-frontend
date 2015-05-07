@@ -4,6 +4,7 @@ define(function(require) {
 
   var module = require('./module');
   require('./controllers/list');
+  require('./controllers/show');
   require('./resources/rest');
   require('./states');
 

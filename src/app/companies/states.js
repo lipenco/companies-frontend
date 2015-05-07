@@ -33,7 +33,18 @@ define(function(require) {
             controllerAs  : 'vm'
           }
         }
-      });
+      })
+      .state('companies.show', {
+          url: '/:id?name?address',
+          parent: 'companies.list',
+          views: {
+            'readCompany@companies': {
+              templateUrl   : 'app/companies/templates/show.html',
+              controller    : 'CompaniesShowCtrl',
+              controllerAs  : 'vm',
+            }
+          }
+        });
 
   }
 

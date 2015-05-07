@@ -1,7 +1,15 @@
-<div ui-view="navbar">
+<!-- <div ui-view="navbar">
   <div ng-include="'app/main/templates/navbar.html'"></div>
+</div> -->
+<main class="cd-main" ui-view="content"></main>
+<div class="cd-folding-panel">
+  <div class="fold-left"></div>
+  <div class="fold-right"></div>
+  <div class="cd-fold-content">
+    <span ui-view="readCompany"></span>
+  </div>
 </div>
-<div ui-view="content" class="wrap"></div>
+
 <!-- <div ui-view="footer">
   <div ng-include="'app/main/templates/footer.html'"></div>
 </div> -->
