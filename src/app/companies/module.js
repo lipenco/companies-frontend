@@ -6,6 +6,7 @@ define(function(require) {
 
   require('uiRouter');
   require('uiBootstrap');
+  require('toaster');
 
   // angular module definition
   return angular.module(
@@ -18,6 +19,7 @@ define(function(require) {
 
       'ui.router',
       'ui.bootstrap',
+      'toaster',
 
       require('shared/fend/input-utils/package').name,
       require('shared/fend/pagination/package').name

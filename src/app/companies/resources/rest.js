@@ -13,6 +13,7 @@ define(function(require) {
 
     var rest = $resource(
       'https://lipenco-company-api.herokuapp.com/api/v1/companies/:id',
+      // 'http://localhost:9292/api/v1/companies/:id',
       {
         'id': ''
       },
@@ -20,6 +21,7 @@ define(function(require) {
         'update': { 'method': 'PUT' }
       }
     );
+
 
     return rest;
 

@@ -1,0 +1,77 @@
+<div class="cd-fold-content single-page">
+  <header class="fadeInDown animated">
+    <h2 ng-hide="vm.editing">{{vm.company.name}} </h2>
+
+    <div class="group name-input" ng-show="vm.editing">
+      <input type="text"  ng-model="vm.company.name" placeholder="{{vm.company.name}}" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Name</label>
+    </div>
+
+    <a ng-class="vm.editing ? 'fadeOutDownBig' : 'zoomInDown'" class="animated btn" ng-click="vm.edit()">
+      <img src="./shared/img/pencil.svg">
+    </a>
+  </header>
+
+
+    <div class="container-fluid animated bounceInUp">
+      <div class="row">
+        <div class="col-md-4 text-right"><em>Adress</em></div>
+        <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.address}}</p></div>
+        <div class="col-md-4" ng-show="vm.editing">
+          <input type="text" required id="address" ng-model="vm.company.address" placeholder="{{vm.company.address}}">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-right"><em>City</em></div>
+        <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.city}}</p></div>
+        <div class="col-md-4" ng-show="vm.editing">
+          <input type="text" required id="city" ng-model="vm.company.city" placeholder="{{vm.company.city}}">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-right"><em>Country</em></div>
+        <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.country}}</p></div>
+        <div class="col-md-4" ng-show="vm.editing">
+          <input type="text" required id="country" ng-model="vm.company.country" placeholder="{{vm.company.country}}">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-right"><em>Email</em></div>
+        <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.email}}</p></div>
+        <div class="col-md-4" ng-show="vm.editing">
+          <input type="email" id="email" ng-model="vm.company.email" placeholder="{{vm.company.email}}">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-right"><em>Phone</em></div>
+        <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.phone}}</p></div>
+        <div class="col-md-4" ng-show="vm.editing">
+          <input type="phone" id="phone" ng-model="vm.company.phone" placeholder="{{vm.company.phone}}">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <footer>
+        <a ng-if="vm.editing" ng-class="vm.editing ? 'fadeInDownBig' : ''" class="animated btn " ng-click="vm.update()">
+          <img ng-if="vm.editing" src="./shared/img/sync.svg">
+        </a>
+      </footer>
+
+
+
+
+
+  </div>
+
+</div>
+<a class="cd-close" ng-click='vm.toggleContent(flase)'>XXX</a>

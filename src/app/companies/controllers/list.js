@@ -25,8 +25,13 @@ define(function(require) {
     var vm = this;
     vm.companies = undefined;
 
+    $rootScope.$on('company:updated:event', function(event, value) {
+      event.preventDefault(); event.stopPropagation();
+      loadData();
+    });
 
-    function loadData(page) {
+
+    function loadData() {
       resource.query(
         function(result) {
           vm.companies = result;

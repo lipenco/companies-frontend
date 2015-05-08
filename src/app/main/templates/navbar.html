@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-fixed-top " role="navigation">
   <div class="container">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -9,10 +9,14 @@
         </button>
         <a class="navbar-brand" href="#/">Companies CRUD</a>
     </div>
+    <a  ui-sref="companies.new()" class="animated btn zoomInDown" ng-click="vm.edit()">
+      <img src="./shared/img/add.svg">
+    </a>
+
     <div class="navbar-collapse collapse">
 
       <!-- navbar left -->
-      <ul class="nav navbar-nav">
+      <!-- <ul class="nav navbar-nav">
 
         <ul class="nav navbar-nav" ng-repeat="item in menuItems.left">
           <li class="{{item.css}}"><a href="{{item.url}}">{{item.label}}</a></li>
@@ -20,13 +24,13 @@
 
 
 
-      </ul>
+      </ul> -->
       <!-- ./navbar left -->
 
       <!-- navbar right -->
-      <ul class="nav navbar-nav navbar-right" ng-repeat="item in menuItems.right">
+      <!-- <ul class="nav navbar-nav navbar-right" ng-repeat="item in menuItems.right">
         <li class="navbar-right {{item.css}}"><a href="{{item.url}}">{{item.label}}</a></li>
-      </ul>
+      </ul> -->
       <!-- ./navbar right -->
 
     </div><!--/.nav-collapse -->

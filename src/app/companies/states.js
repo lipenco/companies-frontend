@@ -35,12 +35,23 @@ define(function(require) {
         }
       })
       .state('companies.show', {
-          url: '/:id?name?address',
+          url: '/show/:id?name?address?email?city?country',
           parent: 'companies.list',
           views: {
             'readCompany@companies': {
               templateUrl   : 'app/companies/templates/show.html',
               controller    : 'CompaniesShowCtrl',
+              controllerAs  : 'vm',
+            }
+          }
+      })
+      .state('companies.new', {
+          url: '/new',
+          parent: 'companies.list',
+          views: {
+            'readCompany@companies': {
+              templateUrl   : 'app/companies/templates/new.html',
+              controller    : 'CompaniesNewCtrl',
               controllerAs  : 'vm',
             }
           }
