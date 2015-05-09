@@ -11,7 +11,6 @@ require({
       'vendor/bootstrap/3.3.2/js/bootstrap.min'
     ],
 
-
     angular: [
       'vendor/angular.js/1.3.11/angular.min'
     ],
@@ -24,6 +23,9 @@ require({
       'vendor/angular.js/1.3.11/angular-animate.min'
     ],
 
+    angularMessages: [
+      'vendor/angular.js/1.3.11/angular-messages.min'
+    ],
 
     uiBootstrap: [
       'vendor/angular-ui/bootstrap/0.12.0/ui-bootstrap-tpls.min'
@@ -76,6 +78,10 @@ require({
     },
 
     'angularAnimate': {
+      deps: ['angular']
+    },
+
+    'angularMessages': {
       deps: ['angular']
     },
 

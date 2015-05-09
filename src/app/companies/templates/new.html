@@ -2,44 +2,52 @@
   <header class="animated fadeInDown">
     <h2 ng-show="vm.company.name">{{vm.company.name}}</h2>
     <h2 ng-hide="vm.company.name">Add New Company</h2>
-
-
-    <!-- <a ng-class="vm.editing ? 'fadeOutDownBig' : 'zoomInDown'" class="animated btn" ng-click="vm.edit()">
-      <img src="./shared/img/pencil.svg">
-    </a> -->
   </header>
 
   <div class="container-fluid animated bounceInUp">
+    <form name="companyForm">
     <div class="row">
       <div class="col-md-4 text-right"><em>Name</em></div>
       <div class="col-md-4">
-        <input type="text" required id="name" ng-model="vm.company.name" placeholder="{{vm.company.name}}">
+        <input type="text" required id="name" name="name" fend-focus="focusNameInput" ng-model="vm.company.name" placeholder="{{vm.company.name}}">
         <span class="highlight"></span>
         <span class="bar"></span>
+        <div  ng-messages="companyForm.name.$touched && companyForm.name.$error">
+          <div ng-message="required">You did not enter company name</div>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 text-right"><em>Adress</em></div>
       <div class="col-md-4">
-        <input type="text" required id="address" ng-model="vm.company.address" placeholder="{{vm.company.address}}">
+        <input type="text" required id="address" name='address' ng-model="vm.company.address" placeholder="{{vm.company.address}}">
         <span class="highlight"></span>
         <span class="bar"></span>
+        <div ng-messages="companyForm.address.$touched && companyForm.address.$error">
+          <div ng-message="required">You did not enter address</div>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 text-right"><em>City</em></div>
       <div class="col-md-4">
-        <input type="text" required id="city" ng-model="vm.company.city" placeholder="{{vm.company.city}}">
+        <input type="text" required id="city" name="city" ng-model="vm.company.city" placeholder="{{vm.company.city}}">
         <span class="highlight"></span>
         <span class="bar"></span>
+        <div ng-messages="companyForm.city.$touched &&  companyForm.city.$error">
+          <div ng-message="required">You did not enter city</div>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 text-right"><em>Country</em></div>
       <div class="col-md-4">
-        <input type="text" required id="country" ng-model="vm.company.country" placeholder="{{vm.company.country}}">
+        <input type="text" required id="country" name="country" ng-model="vm.company.country" placeholder="{{vm.company.country}}">
         <span class="highlight"></span>
         <span class="bar"></span>
+        <div ng-messages="companyForm.country.$touched &&companyForm.country.$error">
+          <div ng-message="required">You did not enter country</div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -59,10 +67,11 @@
       </div>
     </div>
     <footer>
-      <a  ng-class="vm.editing ? 'fadeInDownBig' : ''" class="animated btn" ng-click="vm.save()">
-        <img ng-if="vm.editing" src="./shared/img/sync.svg">
+      <a  ng-class="vm.editing ? 'fadeInDownBig' : ''" class="animated green btn" ng-click="vm.save()">
+        <img  src="./shared/img/sync.svg">
       </a>
     </footer>
+  </form>
   </div>
 
 </div>

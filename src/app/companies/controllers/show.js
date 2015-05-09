@@ -22,17 +22,27 @@ define(function(require) {
     vm.edit = edit;
     vm.update = update;
 
+    var ctrlName = 'CompaniesShowCtrl';
+    input = input.get(ctrlName);
+
+    input.config(
+      $scope,
+      [
+        'focusNameInput'
+      ]);
+
 
     function edit() {
-      console.log("edit");
       vm.editing = true;
+      input.focusReset();
+      input.setFocus('focusNameInput');
     }
 
     function update() {
       resource.update(vm.company, {'id': vm.company.id},
       function(res) {
         $rootScope.$emit('company:updated:event', res);
-        $toaster.pop('success', 'You upddated Company', vm.company.name);
+        $toaster.pop('success', 'You updated company', vm.company.name);
         vm.editing = false;
       },
       function(res){

@@ -4,6 +4,7 @@ define(function(require) {
   var module = require('../module');
   require('../resources/rest');
 
+
   module.controller('CompaniesNewCtrl', CompaniesNewCtrl);
 
   //---
@@ -20,12 +21,20 @@ define(function(require) {
     vm.company = {};
     vm.save = save;
 
+    var ctrlName = 'CompaniesNewCtrl';
+    input = input.get(ctrlName);
+
+    input.config(
+      $scope,
+      [
+        'focusNameInput'
+      ]);
+
+
 
 
 
     function save() {
-      console.log("save");
-      console.log(vm.company);
       resource.save(vm.company, {'id': vm.company.id},
       function(res) {
         $rootScope.$emit('company:aded:event', res);
@@ -52,6 +61,7 @@ define(function(require) {
     }
 
     toggleContent(true);
+    input.setFocus('focusNameInput');
 
 
 

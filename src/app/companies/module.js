@@ -3,6 +3,7 @@ define(function(require) {
 
   var angular = require('angular');
   require('angularResource');
+  require('angularMessages');
 
   require('uiRouter');
   require('uiBootstrap');
@@ -16,6 +17,7 @@ define(function(require) {
     // module dependencies
     [
       'ngResource',
+      'ngMessages',
 
       'ui.router',
       'ui.bootstrap',

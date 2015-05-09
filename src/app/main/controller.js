@@ -20,7 +20,7 @@ define(function(require) {
 
     //--- @begin: menu items
     // menu.addMenuItem('Home', 'home');
-    menu.addMenuItem('Companies', 'companies');
+    // menu.addMenuItem('Companies', 'companies');
     //--- @end: menu items
 
   }

@@ -3,13 +3,13 @@
     <h2 ng-hide="vm.editing">{{vm.company.name}} </h2>
 
     <div class="group name-input" ng-show="vm.editing">
-      <input type="text"  ng-model="vm.company.name" placeholder="{{vm.company.name}}" required>
+      <input type="text" ng-model="vm.company.name" placeholder="{{vm.company.name}}" fend-focus="focusNameInput" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>Name</label>
     </div>
 
-    <a ng-class="vm.editing ? 'fadeOutDownBig' : 'zoomInDown'" class="animated btn" ng-click="vm.edit()">
+    <a ng-class="vm.editing ? 'fadeOut' : 'zoomInDown'" class="animated btn" ng-click="vm.edit()">
       <img src="./shared/img/pencil.svg">
     </a>
   </header>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <footer>
-        <a ng-if="vm.editing" ng-class="vm.editing ? 'fadeInDownBig' : ''" class="animated btn " ng-click="vm.update()">
+        <a ng-class="vm.editing ? 'fadeInDownBig' : 'fadeOutDownBig'" class="animated btn green" ng-click="vm.update()">
           <img ng-if="vm.editing" src="./shared/img/sync.svg">
         </a>
       </footer>
