@@ -1,12 +1,14 @@
 
   <ul class="cd-gallery">
-    <li  ng-repeat="company in vm.companies" class="cd-item">
+    <li  ng-repeat="company in vm.companies" class="cd-item {{company.color}}">
       <a>
         <div>
         <h2>{{company.name}}</h2>
-        <p>{{company.city}}</p>
+        <p>{{company.address}}  &nbsp;&nbsp;|&nbsp;&nbsp; {{company.city}}  &nbsp;&nbsp;|&nbsp;&nbsp; <span>{{company.country}}</span></p>
+        <!-- <p>{{company.email}}</p> -->
         <b ui-sref="companies.show(company)">View More</b>
         </div>
       </a>
+
     </li>
   </ul>

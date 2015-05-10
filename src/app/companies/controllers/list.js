@@ -30,11 +30,19 @@ define(function(require) {
       loadData();
     });
 
+    function getColor(index) {
+      var colorNum = index % 5;
+      return 'color' + colorNum;
+    }
+
 
     function loadData() {
       resource.query(
         function(result) {
           vm.companies = result;
+          angular.forEach(vm.companies, function(company, key) {
+            company.color = getColor(key);
+          });
         });
     }
 
