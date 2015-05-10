@@ -12,6 +12,7 @@ define(function(require) {
   function MainCtrl(progressConfig, menu) {
     var vm = this;
 
+
     //--- @begin: loading progressbar config
     progressConfig.eventListeners();
     progressConfig.color('#428bca');
