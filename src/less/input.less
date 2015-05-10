@@ -1,3 +1,14 @@
+.error {
+  color:#F44336;
+}
+
+.companyForm {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
 
 input 				{
   font-size:18px;
@@ -7,6 +18,9 @@ input 				{
   border:none;
   border-bottom:1px solid #757575;
   background-color:transparent;
+  &.ng-invalid.ng-touched {
+    border-bottom:1px solid #F44336;
+  }
 }
 input:focus 		{ outline:none; }
 
@@ -23,6 +37,7 @@ label 				 {
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
+
 
 /* active state */
 input:focus ~ label, input:valid ~ label 		{
@@ -43,6 +58,12 @@ input:focus ~ label, input:valid ~ label 		{
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
+
+}
+.bar.invalid {
+  &:before, &:after {
+    background-color: #F44336;
+  }
 }
 .bar:before {
   left:50%;

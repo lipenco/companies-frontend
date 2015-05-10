@@ -42,6 +42,11 @@
       ],
 
 
+      angularMessages: [
+        'vendor/angular.js/1.3.11/angular-messages.min'
+      ],
+
+
       uiBootstrap: [
         'vendor/angular-ui/bootstrap/0.12.0/ui-bootstrap-tpls.min'
       ],
@@ -93,6 +98,10 @@
       },
 
       'angularAnimate': {
+        deps: ['angular']
+      },
+
+      'angularMessages': {
         deps: ['angular']
       },
 
