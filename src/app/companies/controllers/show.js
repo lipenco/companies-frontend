@@ -54,10 +54,10 @@ define(function(require) {
     function remove() {
       resource.delete(vm.company, {'id': vm.company.id},
       function(res) {
-        $rootScope.$emit('company:deleted:event', res);
+        $rootScope.$emit('company:deleted:event', vm.company.$index);
         $toaster.pop('success', 'You deleted company', vm.company.name);
         toggleContent(false);
-        $state.go(companies.list);
+        $state.go('companies.list');
       },
       function(res){
         $toaster.pop('error', 'Something went wrong', 'Correct the form');

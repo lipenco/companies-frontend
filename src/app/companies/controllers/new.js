@@ -40,7 +40,7 @@ define(function(require) {
         $rootScope.$emit('company:added:event', res);
         $toaster.pop('success', 'You added new Company', vm.company.name);
         toggleContent(false);
-        $state.go(companies.list);
+        $state.go('companies.list');
       },
       function(res){
         $toaster.pop('error', 'Something went wrong', 'Correct the form');

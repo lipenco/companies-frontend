@@ -32,28 +32,20 @@ define(function(require) {
 
     $rootScope.$on('company:deleted:event', function(event, value) {
       event.preventDefault(); event.stopPropagation();
-      loadData();
+      vm.companies.splice(value, 1);
     });
 
     $rootScope.$on('company:added:event', function(event, value) {
       event.preventDefault(); event.stopPropagation();
+      // vm.companies.push(value);
       loadData();
     });
-
-
-    function getColor(index) {
-      var colorNum = index % 5;
-      return 'color' + colorNum;
-    }
 
 
     function loadData() {
       resource.query(
         function(result) {
           vm.companies = result;
-          angular.forEach(vm.companies, function(company, key) {
-            company.color = getColor(key);
-          });
         });
     }
 
