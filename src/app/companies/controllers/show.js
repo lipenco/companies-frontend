@@ -21,6 +21,7 @@ define(function(require) {
     vm.editing = false;
     vm.edit = edit;
     vm.update = update;
+    vm.delete = remove;
 
     var ctrlName = 'CompaniesShowCtrl';
     input = input.get(ctrlName);
@@ -44,6 +45,19 @@ define(function(require) {
         $rootScope.$emit('company:updated:event', res);
         $toaster.pop('success', 'You updated company', vm.company.name);
         vm.editing = false;
+      },
+      function(res){
+        $toaster.pop('error', 'Something went wrong', 'Correct the form');
+      });
+    }
+
+    function remove() {
+      resource.delete(vm.company, {'id': vm.company.id},
+      function(res) {
+        $rootScope.$emit('company:deleted:event', res);
+        $toaster.pop('success', 'You deleted company', vm.company.name);
+        toggleContent(false);
+        $state.go(companies.list);
       },
       function(res){
         $toaster.pop('error', 'Something went wrong', 'Correct the form');

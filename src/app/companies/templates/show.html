@@ -77,11 +77,19 @@
 
         </div>
       </div>
+
       <footer>
+
+        <a ng-class="vm.editing ? 'fadeInLeftBig' : 'fadeOutLeftBig'" class="animated delete" ng-click="vm.delete()">
+          DELETE
+        </a>
 
         <a ng-class="vm.editing ? 'fadeInDownBig' : 'fadeOutDownBig'" class="animated btn green" ng-click="vm.update()" ng-disabled="companyForm.$invalid">
           <img ng-if="vm.editing" src="./shared/img/sync.svg">
         </a>
+
+
+
       </footer>
     </form>
 

@@ -37,7 +37,7 @@ define(function(require) {
     function save() {
       resource.save(vm.company, {'id': vm.company.id},
       function(res) {
-        $rootScope.$emit('company:aded:event', res);
+        $rootScope.$emit('company:added:event', res);
         $toaster.pop('success', 'You added new Company', vm.company.name);
         toggleContent(false);
         $state.go(companies.list);
