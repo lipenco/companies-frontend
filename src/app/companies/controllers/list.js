@@ -37,9 +37,13 @@ define(function(require) {
 
     $rootScope.$on('company:added:event', function(event, value) {
       event.preventDefault(); event.stopPropagation();
-      // vm.companies.push(value);
-      loadData();
+      addItem(value)
     });
+
+    function addItem(value) {
+      var c = vm.companies.length + 1;
+      vm.companies.splice(0, 0, value);
+    }
 
 
     function loadData() {
