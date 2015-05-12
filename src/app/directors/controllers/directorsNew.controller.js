@@ -16,8 +16,9 @@ define(function(require) {
     var vm = $scope;
     vm.addNew = addNew;
     vm.newDirectorAdding = false;
-    vm.newDirector = undefined;
+    vm.newDirector = {};
     vm.saveDirector = saveDirector;
+    vm.directors = $scope.vm.directors;
 
 
     function addNew() {
@@ -26,7 +27,11 @@ define(function(require) {
 
     function saveDirector() {
       console.log($scope.newDirector);
-      alert('you cannot save $scope.newDirector, work in progress');
+      console.log($scope, $scope.vm.company);
+      $scope.vm.directors.push($scope.newDirector);
+      vm.newDirectorAdding = false;
+      $scope.newDirector = undefined;
+      // alert('you cannot save $scope.newDirector, work in progress');
     }
 
   }

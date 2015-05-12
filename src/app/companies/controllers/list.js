@@ -11,12 +11,12 @@ define(function(require) {
   CompaniesListCtrl.$inject = [
     '$rootScope', '$state', '$scope', '$location',
     'CompaniesResource', 'InputFocusFactory',
-    '$log'
+    '$log', '$filter'
   ];
 
   function CompaniesListCtrl(
     $rootScope, $state, $scope, $location,
-    resource, input, console
+    resource, input, console, $filter
   ) {
 
     var ctrlName = 'CompaniesListCtrl';
@@ -25,9 +25,10 @@ define(function(require) {
     var vm = this;
     vm.companies = undefined;
 
-    $rootScope.$on('company:updated:event', function(event, value) {
+    $rootScope.$on('company:updated:event', function(event,  value) {
       event.preventDefault(); event.stopPropagation();
-      vm.companies[value.id] = value;
+      var c = $filter('filter')(vm.companies, {id: value.id})[0];
+      vm.companies[vm.companies.indexOf(c)] = value;
     });
 
     $rootScope.$on('company:deleted:event', function(event, value) {

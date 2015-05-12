@@ -20,6 +20,7 @@ define(function(require) {
     vm.toggleContent = toggleContent;
     vm.company = {};
     vm.save = save;
+    vm.directors = [];
 
     var ctrlName = 'CompaniesNewCtrl';
     input = input.get(ctrlName);
@@ -35,6 +36,7 @@ define(function(require) {
 
 
     function save() {
+      vm.company.directors = angular.toJson(vm.directors);
       resource.save(vm.company, {'id': vm.company.id},
       function(res) {
         $rootScope.$emit('company:added:event', res);

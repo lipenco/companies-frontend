@@ -18,10 +18,12 @@ define(function(require) {
     var vm = this;
     vm.toggleContent = toggleContent;
     vm.company = params;
+    vm.directors = [];
     vm.editing = false;
     vm.edit = edit;
     vm.update = update;
     vm.delete = remove;
+
 
     var ctrlName = 'CompaniesShowCtrl';
     input = input.get(ctrlName);
@@ -40,7 +42,9 @@ define(function(require) {
     }
 
     function update() {
-      resource.update(vm.company, {'id': vm.company.id},
+      var c = vm.company;
+      c.directors = angular.toJson(vm.directors);
+      resource.update(c, {'id': vm.company.id},
       function(res) {
         $rootScope.$emit('company:updated:event', res);
         $toaster.pop('success', 'You updated company', vm.company.name);
