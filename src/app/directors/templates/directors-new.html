@@ -1,0 +1,17 @@
+
+<div class="add-new" ng-class="{'add': newDirectorAdding === false }">
+  <a ng-hide="newDirectorAdding" ng-href="#" ng-click="addNew()">Add Founder</a>
+  <div ng-show="newDirectorAdding" class="new-panel">
+    <div>
+      <input type="text" id="directorName" name="directorName" ng-model="newDirector.name" placeholder="Founder Name">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+    </div>
+    <div>
+      <input type="text" id="directorSurname" name="directorSurname" ng-model="newDirector.surname" placeholder="Founder Surname">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+    </div>
+    <div class="btn green" ng-click="saveDirector()">ADD</div>
+  </div>
+</div>
