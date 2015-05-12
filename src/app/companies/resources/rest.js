@@ -5,7 +5,6 @@ define(function(require) {
 
   module.factory('CompaniesResource', CompaniesResource);
 
-  //---
 
   CompaniesResource.$inject = ['$resource'];
 

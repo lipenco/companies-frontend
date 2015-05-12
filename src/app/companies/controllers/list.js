@@ -27,7 +27,7 @@ define(function(require) {
 
     $rootScope.$on('company:updated:event', function(event, value) {
       event.preventDefault(); event.stopPropagation();
-      loadData();
+      vm.companies[value.id] = value;
     });
 
     $rootScope.$on('company:deleted:event', function(event, value) {
@@ -37,14 +37,8 @@ define(function(require) {
 
     $rootScope.$on('company:added:event', function(event, value) {
       event.preventDefault(); event.stopPropagation();
-      addItem(value)
-    });
-
-    function addItem(value) {
-      var c = vm.companies.length + 1;
       vm.companies.splice(0, 0, value);
-    }
-
+    });
 
     function loadData() {
       resource.query(

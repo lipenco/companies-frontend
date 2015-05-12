@@ -2,9 +2,8 @@
   <header class="fadeInDown animated">
     <h2 ng-hide="vm.editing">{{vm.company.name}} </h2>
 
-    <div class="group name-input" ng-show="vm.editing">
+    <div class="col-md-5 name-input" ng-show="vm.editing">
       <input type="text"  name="name" ng-model="vm.company.name" value="{{vm.company.name}}" fend-focus="focusNameInput" required>
-      <span class="highlight"></span>
       <span  ng-class="{'invalid': companyForm.name.$error.required && companyForm.address.$touched }" class="bar"></span>
       <div  ng-messages="companyForm.name.$touched && companyForm.name.$error">
         <div  class="error" ng-message="required">You did not enter name</div>
@@ -22,9 +21,8 @@
       <div class="row">
         <div class="col-md-4 text-right"><em>Adress</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.address}}</p></div>
-        <div class="col-md-4" ng-show="vm.editing">
+        <div class="col-md-5 animated bounceInUp" ng-show="vm.editing">
           <input type="text" name="address" required id="address" ng-model="vm.company.address" value="{{vm.company.address}}">
-          <span class="highlight"></span>
           <span  ng-class="{'invalid': companyForm.address.$error.required && companyForm.address.$touched }" class="bar"></span>
           <div  ng-messages="companyForm.address.$touched && companyForm.address.$error">
             <div  class="error" ng-message="required">You did not enter address</div>
@@ -34,9 +32,8 @@
       <div class="row">
         <div class="col-md-4 text-right"><em>City</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.city}}</p></div>
-        <div class="col-md-4" ng-show="vm.editing">
+        <div class="col-md-5 animated bounceInUp" ng-show="vm.editing">
           <input type="text" required name="city" id="city" ng-model="vm.company.city" value="{{vm.company.city}}">
-          <span class="highlight"></span>
           <span ng-class="{'invalid': companyForm.city.$error.required && companyForm.city.$touched }" class="bar"></span>
           <div ng-messages="companyForm.city.$touched &&  companyForm.city.$error">
             <div class="error" ng-message="required">You did not enter city</div>
@@ -46,9 +43,8 @@
       <div class="row">
         <div class="col-md-4 text-right"><em>Country</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.country}}</p></div>
-        <div class="col-md-4" ng-show="vm.editing">
+        <div class="col-md-5 animated bounceInUp" ng-show="vm.editing">
           <input type="text" required name="country" id="country" ng-model="vm.company.country" value="{{vm.company.country}}">
-          <span class="highlight"></span>
           <span ng-class="{'invalid': companyForm.country.$error.required && companyForm.country.$touched }" class="bar"> </span>
           <div ng-messages="companyForm.country.$touched && companyForm.country.$error">
             <div class="error" ng-message="required">You did not enter country</div>
@@ -58,9 +54,8 @@
       <div class="row">
         <div class="col-md-4 text-right"><em>Email</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.email}}</p></div>
-        <div class="col-md-4" ng-show="vm.editing">
+        <div class="col-md-5 animated bounceInUp" ng-show="vm.editing">
           <input type="email" id="email" name="email" ng-model="vm.company.email" value="{{vm.company.email}}">
-          <span class="highlight"></span>
           <span ng-class="{'invalid': companyForm.email.$error.required  && companyForm.email.$touched }" class="bar"></span>
           <div ng-messages="companyForm.email.$touched && companyForm.email.$error">
             <div ng-class="{'invalid': companyForm.email.$error.required }" class="error" ng-message="email">Must be valid email</div>
@@ -70,11 +65,15 @@
       <div class="row">
         <div class="col-md-4 text-right"><em>Phone</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.phone}}</p></div>
-        <div class="col-md-4" ng-show="vm.editing">
+        <div class="col-md-5 animated bounceInUp" ng-show="vm.editing">
           <input type="tel" id="phone" name="phone" ng-model="vm.company.phone" value="{{vm.company.phone}}">
-          <span class="highlight"></span>
           <span class="bar"></span>
-
+        </div>
+      </div>
+      <div class="row animated bounceInUp" ng-show="vm.editing">
+        <div class="col-md-4 text-right"><em></em></div>
+        <div class="col-md-5">
+          <directors-new></directors-new>
         </div>
       </div>
 

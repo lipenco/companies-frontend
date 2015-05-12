@@ -24,7 +24,7 @@ define(function(require) {
       'toaster',
 
       require('shared/fend/input-utils/package').name,
-      require('shared/fend/pagination/package').name
+      require('shared/directors/package').name
     ]
   );
 
