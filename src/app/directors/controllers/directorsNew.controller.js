@@ -19,19 +19,21 @@ define(function(require) {
     vm.newDirector = {};
     vm.saveDirector = saveDirector;
     vm.directors = $scope.vm.directors;
+    vm.close = close;
 
 
     function addNew() {
       vm.newDirectorAdding = true;
     }
 
-    function saveDirector() {
-      console.log($scope.newDirector);
-      console.log($scope, $scope.vm.company);
-      $scope.vm.directors.push($scope.newDirector);
+    function close() {
       vm.newDirectorAdding = false;
-      $scope.newDirector = undefined;
-      // alert('you cannot save $scope.newDirector, work in progress');
+    }
+
+    function saveDirector() {
+      $scope.vm.directors.push(vm.newDirector);
+      vm.newDirectorAdding = false;
+      vm.newDirector = {};
     }
 
   }

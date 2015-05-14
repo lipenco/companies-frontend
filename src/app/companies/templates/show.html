@@ -1,4 +1,5 @@
 <div class="cd-fold-content single-page">
+  <form name="companyForm"  ng-submit="vm.update()">
   <header class="fadeInDown animated">
     <h2 ng-hide="vm.editing">{{vm.company.name}} </h2>
 
@@ -14,10 +15,8 @@
       <img src="./shared/img/pencil.svg">
     </a>
   </header>
-
-
     <div class="container-fluid animated bounceInUp">
-    <form name="companyForm">
+
       <div class="row">
         <div class="col-md-4 text-right"><em>Adress</em></div>
         <div class="col-md-8" ng-hide="vm.editing"><p>{{vm.company.address}}</p></div>
@@ -80,13 +79,14 @@
 
       <footer>
 
-        <a ng-class="vm.editing ? 'fadeInLeftBig' : 'fadeOutLeftBig'" class="animated delete" ng-click="vm.delete()">
+        <a href ng-class="vm.editing ? 'fadeInLeftBig' : 'fadeOutLeftBig'" class="animated delete" ng-click="vm.delete()">
           DELETE
         </a>
 
         <a ng-class="vm.editing ? 'fadeInDownBig' : 'fadeOutDownBig'" class="animated btn green" ng-click="vm.update()" ng-disabled="companyForm.$invalid">
           <img ng-if="vm.editing" src="./shared/img/sync.svg">
         </a>
+        <input type="submit" style="visibility:hidden" ng-disabled="companyForm.$invalid">
 
 
 

@@ -1,6 +1,26 @@
 <div class="row" ng-repeat="director in directors">
     <div class="col-md-4 text-right" ><em>Founder {{$index + 1}}</em></div>
+    <div class="col-md-8" ng-hide="vm.editing"><p>{{director.name}}  {{director.surname}} {{director.id}}</p></div>
     <div class="col-md-5">
-      <p>{{director.name}}  {{director.surname}}</p>
+      <div class="row">
+      <div class="col-md-12 animated bounceInUp" ng-show="vm.editing">
+        <input type="tel" id="name" name="name" ng-model="director.name" value="{{director.name}}">
+        <span class="bar"></span>
+      </div>
+      <div class="col-md-12 animated bounceInUp" ng-show="vm.editing">
+        <input type="tel" id="name" name="surname" ng-model="director.surname" value="{{director.surname}}">
+        <span class="bar"></span>
+      </div>
     </div>
+  </div>
+    <div class="col-md-3 animated bounceInUp" ng-show="vm.editing">
+      <div class="row">
+      <!-- <div class="col-md-6 animated bounceInUp" ng-show="vm.editing">
+        <a class=''>pdf</a>
+      </div> -->
+      <div class="col-md-6 animated bounceInUp" ng-show="vm.editing">
+        <a href class="delete delete-btn" ng-click="deleteDirector(director)">DELETE</a>
+      </div>
+      </div>
+      </div>
 </div>

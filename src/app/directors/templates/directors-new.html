@@ -1,17 +1,23 @@
 
 <div class="add-new" ng-class="{'add': newDirectorAdding === false }">
-  <a ng-hide="newDirectorAdding" ng-href="#" ng-click="addNew()">Add Founder</a>
-  <div ng-show="newDirectorAdding" class="new-panel">
+
+  <a ng-hide="newDirectorAdding" href ng-click="addNew()">Add Founder</a>
+  <div ng-if="newDirectorAdding" class="new-panel">
+    <div class="close" ng-click="close()">x</div>
     <div>
-      <input type="text" id="directorName" name="directorName" ng-model="newDirector.name" placeholder="Founder Name">
-      <span class="highlight"></span>
-      <span class="bar"></span>
+      <input type="text" required id="directorName" name="directorName" ng-model="newDirector.name" placeholder="Founder Name">
+      <span ng-class="{'invalid': companyForm.directorName.$error.required  && companyForm.directorName.$touched }" class="bar"></span>
+      <div ng-messages="companyForm.directorName.$touched && companyForm.directorName.$error">
+        <div class="error" ng-message="required">You did not enter founder name</div>
+      </div>
     </div>
     <div>
-      <input type="text" id="directorSurname" name="directorSurname" ng-model="newDirector.surname" placeholder="Founder Surname">
-      <span class="highlight"></span>
-      <span class="bar"></span>
+      <input type="text" required  id="directorSurname" name="directorSurname" ng-model="newDirector.surname" placeholder="Founder Surname" >
+      <span ng-class="{'invalid': companyForm.directorSurname.$error.required  && companyForm.directorSurname.$touched }" class="bar"></span>
+      <div ng-messages="companyForm.directorSurname.$touched && companyForm.directorSurname.$error">
+        <div class="error" ng-message="required" >You did not enter founder surname</div>
+      </div>
     </div>
-    <div class="btn green" ng-click="saveDirector()">ADD</div>
+    <div class="btn green" ng-click="saveDirector()" ng-disabled="companyForm.directorName.$invalid || companyForm.directorSurname.$invalid">ADD</div>
   </div>
 </div>

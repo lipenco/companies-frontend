@@ -1,11 +1,11 @@
 <div class="cd-fold-content single-page">
+  <form name="companyForm"  ng-submit="vm.save()" class="companyForm animated fadeIn">
   <header class="animated fadeInDown">
     <h2 ng-show="vm.company.name">{{vm.company.name}}</h2>
     <h2 ng-hide="vm.company.name">Add New Company</h2>
   </header>
 
   <div class="container-fluid">
-    <form name="companyForm" class="companyForm animated fadeIn">
     <div class="row">
       <div class="col-md-4 text-right"><em>Name</em></div>
       <div class="col-md-5">
@@ -76,6 +76,7 @@
       <a  ng-class="vm.editing ? 'fadeInDownBig' : ''" class="animated green btn" ng-click="vm.save()" ng-disabled="companyForm.$invalid">
         <img  src="./shared/img/sync.svg">
       </a>
+      <input type="submit" style="visibility:hidden" ng-disabled="companyForm.$invalid">
     </footer>
   </form>
   </div>
